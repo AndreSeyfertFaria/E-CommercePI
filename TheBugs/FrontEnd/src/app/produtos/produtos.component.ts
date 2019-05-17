@@ -18,6 +18,5 @@ export class ProdutosComponent implements OnInit {
 
   listar () {
     this.produtoService.listar().subscribe(dados => this.produtos = dados);
-    console.assert(this.produtos);
   }
 }
