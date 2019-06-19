@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -74,6 +75,10 @@ public class Login {
 	 */
 	private void initialize() {
 		
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Dimension tamanhoTela = tk.getScreenSize();
+		//System.out.println("Resolução Tela" + tamanhoTela.width + "x" + tamanhoTela.height);
+		
 		//============================================================
 		
 					//TELA lOGIN
@@ -84,7 +89,7 @@ public class Login {
 		login.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		login.setBackground(Color.LIGHT_GRAY);
 		login.setTitle("LOGIN");
-		login.setBounds(100, 100, 298, 210);
+		login.setBounds( ((tamanhoTela.width/2)-150),((tamanhoTela.height/2)-110), 300, 220);
 		login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		login.getContentPane().setLayout(null);
 
@@ -146,7 +151,7 @@ public class Login {
 		cadastro.setTitle("CADASTRO");
 		cadastro.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		cadastro.setBackground(Color.LIGHT_GRAY);
-		cadastro.setBounds(100, 100, 449, 474);
+		cadastro.setBounds(((tamanhoTela.width/2)-225),((tamanhoTela.height/2)-237), 450, 474);
 		cadastro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		cadastro.getContentPane().setLayout(null);
 		
@@ -282,7 +287,7 @@ public class Login {
 		intermediario = new JFrame();
 		intermediario.setTitle("INTERMEDIARIA");
 		intermediario.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		intermediario.setBounds(100, 100, 228, 258);
+		intermediario.setBounds(((tamanhoTela.width/2)-114),((tamanhoTela.height/2)-127), 228, 258);
 		intermediario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		intermediario.getContentPane().setLayout(null);
 		
@@ -294,6 +299,7 @@ public class Login {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				ProdutoController.relatorioSintetico();
 				JOptionPane.showMessageDialog(null, "relatorio impresso com sucesso", "Relatório", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});

@@ -12,4 +12,9 @@ public class ProdutoController {
 	public static List<Produto> listarProdutos() {
 		return ProdutoModel.listarProdutos();
 	}
+	
+	public static void relatorioSintetico() {
+		ProdutoModel.relatorioSintetico();
+	}
+
 }
